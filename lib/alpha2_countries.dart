@@ -22,8 +22,10 @@ class Countries {
     try {
       List<dynamic> list = json.decode(countriesJson);
       list.forEach((country) {
-        _countriesByCode[country['code']] = country['name'];
-        _countriesByName[country['name']] = country['code'];
+        String code = country['code'];
+        String name = country['name'];
+        _countriesByCode[code.toLowerCase()] = name;
+        _countriesByName[name.toLowerCase()] = code;
       });
       _load.complete();
     } catch (e) {
@@ -35,10 +37,10 @@ class Countries {
   Map<String, String> _countriesByName = Map();
 
   Future<String> resolveName(String code) async =>
-      _load.future.then((_) => _countriesByCode[code]);
+      _load.future.then((_) => _countriesByCode[code.toLowerCase()]);
 
   Future<String> resolveCode(String country) =>
-      _load.future.then((_) => _countriesByName[country]);
+      _load.future.then((_) => _countriesByName[country.toLowerCase()]);
 
   Future<Map<String, String>> get countries async =>
       _load.future.then((_) => _countriesByCode);

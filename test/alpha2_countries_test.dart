@@ -13,6 +13,16 @@ void main() {
       expect('EE', await countries.resolveCode('Estonia'));
     });
 
+    test('resolving by name is case insensitive', () async {
+      final countries = Countries();
+      expect('EE', await countries.resolveCode('estonia'));
+    });
+
+    test('resolving by code is case insensitive', () async {
+      final countries = Countries();
+      expect('Estonia', await countries.resolveName('ee'));
+    });
+
     test('returns all countries', () async {
       final countries = Countries();
       expect(249, (await countries.countries).length);

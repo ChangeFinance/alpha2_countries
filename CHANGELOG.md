@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Made resolving case insensitive.
+
 ## 1.0.3
 
 * Inlined json data.

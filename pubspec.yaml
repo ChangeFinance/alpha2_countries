@@ -1,5 +1,5 @@
 name: alpha2_countries
-version: 1.0.3
+version: 1.0.4
 description: ISO 3166-1 alpha-2 country codes.
 author: Maido Käära <maido@getchange.com>
 homepage: https://github.com/ChangeFinance/alpha2_countries
