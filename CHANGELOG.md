@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Inlined json data.
+
 ## 1.0.2
 
 * Using `resources` package to load countries.

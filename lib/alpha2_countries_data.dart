@@ -1,3 +1,4 @@
+final countriesJson = """
 [
   {
     "code": "AF",
@@ -996,3 +997,5 @@
     "name": "Zimbabwe"
   }
 ]
+
+""";
