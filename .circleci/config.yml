@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: google/dart
+      - image: google/dart:2.0.0-dev.69.2
     environment:
     steps:
       - checkout
