@@ -7,3 +7,6 @@ homepage: https://github.com/ChangeFinance/alpha2_countries
 dev_dependencies:
   mockito: any
   test: any
+
+environment:
+  sdk: '>=2.0.0-dev.67.0 <3.0.0'

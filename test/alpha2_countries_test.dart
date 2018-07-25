@@ -1,4 +1,4 @@
-import 'package:alpha2_countries/countries.dart';
+import 'package:alpha2_countries/alpha2_countries.dart';
 import 'package:test/test.dart';
 
 void main() {
