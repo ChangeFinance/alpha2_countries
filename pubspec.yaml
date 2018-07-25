@@ -2,7 +2,7 @@ name: alpha2_countries
 version: 1.0.0
 description: ISO 3166-1 alpha-2 country codes.
 author: Maido Käära <maido@getchange.com>
-homepage: 
+homepage: https://github.com/ChangeFinance/alpha2_countries
 
 dev_dependencies:
   mockito: any
