@@ -2,8 +2,8 @@ library alpha2_countries;
 
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
-import 'dart:isolate';
+
+import 'package:resource/resource.dart' show Resource;
 
 class Countries {
   static final Countries _singleton = new Countries._internal();
@@ -20,9 +20,8 @@ class Countries {
 
   Future<dynamic> _init() async {
     try {
-      final uri = await Isolate.resolvePackageUri(
-          Uri.parse('package:alpha2_countries/countries.json'));
-      final countriesJson = await File.fromUri(uri).readAsString();
+      final resource = Resource('package:alpha2_countries/countries.json');
+      final countriesJson = await resource.readAsString(encoding: utf8);
       List<dynamic> list = json.decode(countriesJson);
       list.forEach((country) {
         _countriesByCode[country['code']] = country['name'];

@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Using `resources` package to load countries.
+
 ## 1.0.1
 
 * Broadened the env restrictions to support Flutter.
