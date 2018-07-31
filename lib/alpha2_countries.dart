@@ -15,14 +15,14 @@ class Countries {
     _init();
   }
 
-  void _init()  {
-      List<dynamic> list = json.decode(countriesJson);
-      list.forEach((country) {
-        String code = country['code'];
-        String name = country['name'];
-        _countriesByCode[code.toLowerCase()] = name;
-        _countriesByName[name.toLowerCase()] = code;
-      });
+  void _init() {
+    List<dynamic> list = json.decode(countriesJson);
+    list.forEach((country) {
+      String code = country['code'];
+      String name = country['name'];
+      _countriesByCode[code.toLowerCase()] = name;
+      _countriesByName[name.toLowerCase()] = code;
+    });
   }
 
   Map<String, String> _countriesByCode = Map();

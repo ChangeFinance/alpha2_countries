@@ -25,7 +25,7 @@ void main() {
 
     test('returns all countries', () {
       final countries = Countries();
-      expect(249, ( countries.countries).length);
+      expect(249, (countries.countries).length);
     });
   });
 }
