@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Made API synchronous.
+
 ## 1.0.4
 
 * Made resolving case insensitive.
