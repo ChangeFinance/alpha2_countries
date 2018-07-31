@@ -1,6 +1,5 @@
 library alpha2_countries;
 
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:alpha2_countries/alpha2_countries_data.dart';
@@ -16,10 +15,7 @@ class Countries {
     _init();
   }
 
-  Completer<void> _load = Completer();
-
-  Future<dynamic> _init() async {
-    try {
+  void _init()  {
       List<dynamic> list = json.decode(countriesJson);
       list.forEach((country) {
         String code = country['code'];
@@ -27,21 +23,14 @@ class Countries {
         _countriesByCode[code.toLowerCase()] = name;
         _countriesByName[name.toLowerCase()] = code;
       });
-      _load.complete();
-    } catch (e) {
-      _load.completeError(e);
-    }
   }
 
   Map<String, String> _countriesByCode = Map();
   Map<String, String> _countriesByName = Map();
 
-  Future<String> resolveName(String code) async =>
-      _load.future.then((_) => _countriesByCode[code.toLowerCase()]);
+  String resolveName(String code) => _countriesByCode[code.toLowerCase()];
 
-  Future<String> resolveCode(String country) =>
-      _load.future.then((_) => _countriesByName[country.toLowerCase()]);
+  String resolveCode(String country) => _countriesByName[country.toLowerCase()];
 
-  Future<Map<String, String>> get countries async =>
-      _load.future.then((_) => _countriesByCode);
+  Map<String, String> get countries => _countriesByCode;
 }
