@@ -3,29 +3,29 @@ import 'package:test/test.dart';
 
 void main() {
   group('Countries', () {
-    test('resolves by code', () async {
+    test('resolves by code', () {
       final countries = Countries();
-      expect('Estonia', await countries.resolveName('EE'));
+      expect('Estonia', countries.resolveName('EE'));
     });
 
-    test('resolves by name', () async {
+    test('resolves by name', () {
       final countries = Countries();
-      expect('EE', await countries.resolveCode('Estonia'));
+      expect('EE', countries.resolveCode('Estonia'));
     });
 
-    test('resolving by name is case insensitive', () async {
+    test('resolving by name is case insensitive', () {
       final countries = Countries();
-      expect('EE', await countries.resolveCode('estonia'));
+      expect('EE', countries.resolveCode('estonia'));
     });
 
-    test('resolving by code is case insensitive', () async {
+    test('resolving by code is case insensitive', () {
       final countries = Countries();
-      expect('Estonia', await countries.resolveName('ee'));
+      expect('Estonia', countries.resolveName('ee'));
     });
 
-    test('returns all countries', () async {
+    test('returns all countries', () {
       final countries = Countries();
-      expect(249, (await countries.countries).length);
+      expect(249, ( countries.countries).length);
     });
   });
 }
