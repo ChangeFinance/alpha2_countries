@@ -10,7 +10,7 @@ ISO 3166-1 alpha-2 country codes for Dart. Based on [alpha2-countries](https://g
 
 ```dart
     final countries = Countries();
-    final code = await countries.resolveCode('Estonia');
-    final name = await countries.resolveName('EE');
+    final code = countries.resolveCode('Estonia');
+    final name = countries.resolveName('EE');
 ```
 
