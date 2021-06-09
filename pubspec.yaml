@@ -5,9 +5,8 @@ author: Maido Käära <maido@getchange.com>
 homepage: https://github.com/ChangeFinance/alpha2_countries
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  mockito: ^5.0.10
+  mockito: any
+  test: ^1.16.5
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
