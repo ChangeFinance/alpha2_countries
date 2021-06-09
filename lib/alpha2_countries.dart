@@ -28,9 +28,9 @@ class Countries {
   Map<String, String> _countriesByCode = Map();
   Map<String, String> _countriesByName = Map();
 
-  String resolveName(String code) => _countriesByCode[code.toLowerCase()];
+  String? resolveName(String code) => _countriesByCode[code.toLowerCase()];
 
-  String resolveCode(String country) => _countriesByName[country.toLowerCase()];
+  String? resolveCode(String country) => _countriesByName[country.toLowerCase()];
 
   Map<String, String> get countries => _countriesByCode;
 }
