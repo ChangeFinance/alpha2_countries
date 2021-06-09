@@ -32,4 +32,6 @@ class Countries {
       (element) => element.code.toLowerCase() == code.toLowerCase());
 
   List<Country> get countries => _data;
+
+  Map<String, String> get countryMap => Map<String, String>.fromIterable(countries, key: (el) => el.code, value: (el) => el.name);
 }
