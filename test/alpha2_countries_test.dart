@@ -1,5 +1,5 @@
 import 'package:alpha2_countries/alpha2_countries.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Countries', () {

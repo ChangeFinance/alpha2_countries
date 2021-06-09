@@ -1,3 +1,20 @@
+class Country {
+  final String code;
+  final String name;
+
+  Country({
+    required this.code,
+    required this.name,
+  });
+
+  factory Country.fromJson(Map<String, dynamic> parsedJson) {
+    return Country(
+      name: parsedJson['name'].toString(),
+      code: parsedJson['code'].toString(),
+    );
+  }
+}
+
 final countriesJson = """
 [
   {
