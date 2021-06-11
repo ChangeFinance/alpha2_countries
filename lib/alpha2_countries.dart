@@ -22,15 +22,15 @@ class Countries {
     _data = data.map((e) => Country.fromJson(e)).toList();
   }
 
-  String? resolveName(String code) => resolveCountryByCode(code)?.name;
+  String? resolveName(String? code) => resolveCountryByCode(code)?.name;
 
-  String? resolveCode(String country) => resolveCountryByName(country)?.code;
+  String? resolveCode(String? country) => resolveCountryByName(country)?.code;
 
-  Country? resolveCountryByName(String name) => _data.firstWhereOrNull(
-      (element) => element.name.toLowerCase() == name.toLowerCase());
+  Country? resolveCountryByName(String? name) => _data.firstWhereOrNull(
+      (element) => element.name.toLowerCase() == name?.toLowerCase());
 
-  Country? resolveCountryByCode(String code) => _data.firstWhereOrNull(
-      (element) => element.code.toLowerCase() == code.toLowerCase());
+  Country? resolveCountryByCode(String? code) => _data.firstWhereOrNull(
+      (element) => element.code.toLowerCase() == code?.toLowerCase());
 
   List<Country> get countries => _data;
 
