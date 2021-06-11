@@ -27,5 +27,11 @@ void main() {
       final countries = Countries();
       expect(249, (countries.countries).length);
     });
+
+    test('returns code to name map', () {
+      final countryMap = Countries().countryMap;
+      expect(249, countryMap.entries.length);
+      expect('Albania', countryMap['AL']);
+    });
   });
 }

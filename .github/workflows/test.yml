@@ -1,0 +1,22 @@
+name: Build latest staging
+
+on: push
+
+jobs:
+  cancel_redundant_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rokroskar/workflow-run-cleanup-action@master
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+  test:
+    runs-on: ubuntu-18.04
+    needs: [ cancel_redundant_workflow ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter test --concurrency=6
